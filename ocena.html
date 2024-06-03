@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocene strank | Fitness Coaching</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="reviews-page">
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="about.html">O meni</a></li>
+            <li><a href="services.html">Storitve</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="ocena.html" class="active">Ocene strank</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <div class="nav-icon">
+            <img src="images/gym.png" alt="Icon">
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="reviews-header">
+        <h1>Ocene strank</h1>
+        <p>Oglejte si, kaj naši zadovoljni stranke pravijo o naših storitvah.</p>
+    </section>
+
+    <section id="reviews-list">
+        <article class="review">
+            <h2>Janez Novak</h2>
+            <p>"Treningi z Jernejem so bili zame prelomnica. Izjemen pristop in neverjetni rezultati!"</p>
+            <button class="more-btn" onclick="toggleReview('review1-content')">Poglej več</button>
+            <div id="review1-content" class="hidden-content">
+                <img src="images/janez-before.jpg" alt="Janez pred" class="before-after">
+                <img src="images/janez-after.jpg" alt="Janez po" class="before-after">
+            </div>
+        </article>
+        <article class="review">
+            <h2>Marija Kovač</h2>
+            <p>"Zelo sem zadovoljna z osebnim pristopom in prilagojenimi vajami. Priporočam vsem!"</p>
+            <button class="more-btn" onclick="toggleReview('review2-content')">Poglej več</button>
+            <div id="review2-content" class="hidden-content">
+                <img src="images/marija-before.jpg" alt="Marija pred" class="before-after">
+                <img src="images/marija-after.jpg" alt="Marija po" class="before-after">
+            </div>
+        </article>
+        <article class="review">
+            <h2>Peter Medved</h2>
+            <p>"Odlična izkušnja! Jernej mi je pomagal doseči cilje, ki sem jih prej mislil, da so nedosegljivi."</p>
+            <button class="more-btn" onclick="toggleReview('review3-content')">Poglej več</button>
+            <div id="review3-content" class="hidden-content">
+                <img src="images/peter-before.jpg" alt="Peter pred" class="before-after">
+                <img src="images/peter-after.jpg" alt="Peter po" class="before-after">
+            </div>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Fitness Coaching. Vse pravice pridržane.</p>
+</footer>
+</body>
+</html>

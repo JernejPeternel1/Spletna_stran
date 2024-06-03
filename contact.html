@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Fitness Coaching</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page">
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="about.html">O meni</a></li>
+            <li><a href="services.html">Storitve</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="ocena.html">Ocene strank</a></li> 
+            <li><a href="contact.html" class="active">Kontakt</a></li>
+        </ul>
+        <div class="nav-icon">
+            <img src="images/gym.png" alt="Icon">
+        </div> 
+    </nav>
+</header> 
+
+<main>
+    <section id="contact-info">
+        <h1>Kontaktirajte Nas</h1>
+        <ul>
+            <li><img src="images/phone.png" alt="Telefon" class="contact-icon"> Telefon: +386 40 123 456</li>
+            <li><img src="images/email.png" alt="Email" class="contact-icon"> Email: info@fitnesscoaching.si</li>
+            <li><img src="images/address.png" alt="Naslov" class="contact-icon"> Naslov: Ulica 123, 1000 Ljubljana, Slovenija</li>
+        </ul>
+    </section>
+    <section id="message-form">
+        <h2>Pošljite Sporočilo</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Ime:</label>
+                <input type="text" id="name" name="name" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Sporočilo:</label>
+                <textarea id="message" name="message" class="input-field" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Pošlji</button>
+        </form>
+    </section>
+    
+    <section id="social-media">
+        <h2>Najdete me lahko tudi na:</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/yourusername" target="_blank">
+                <img src="images/instagram.png" alt="Instagram" title="Sledite nam na Instagramu">
+            </a>
+            <a href="https://www.youtube.com/user/yourusername" target="_blank">
+                <img src="images/youtube.png" alt="YouTube" title="Poglejte naše videe na YouTube">
+            </a>
+            <a href="https://www.facebook.com/yourusername" target="_blank">
+                <img src="images/facebook.png" alt="Facebook" title="Všečkajte nas na Facebooku">
+            </a> 
+        </div> 
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Fitness Coaching. Vse pravice pridržane.</p>
+</footer>
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/85f70a50-bbde-4176-9001-c1dfb6cfcd1f/webchat/config.js" defer></script>
+</body>
+</html>

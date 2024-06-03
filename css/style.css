@@ -1,0 +1,895 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #0275d8;
+}
+
+.nav-icon img {
+    height: 40px; 
+    width: auto;
+    filter: grayscale(100%); 
+}
+
+
+nav a {
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+nav a:hover, nav a:focus {
+    color: #0275d8; 
+    transform: scale(1.1); 
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0275d8;
+    transition: width 0.3s;
+}
+
+nav a:hover::after, nav a:focus::after {
+    width: 100%; 
+}
+
+/* Uvodni odsek */
+#intro {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+#intro h1 {
+    color: #18BC9C; 
+    font-size: 3em; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); 
+    margin-bottom: 20px; 
+    transition: transform 0.3s ease; 
+}
+
+#intro h1:hover {
+    transform: scale(1.05); 
+}
+
+#intro p {
+    color: #555; 
+    font-size: 1.2em; 
+    margin-bottom: 30px; 
+}
+
+/* Predogled storitev */
+#services-preview {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#services-preview div {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#services-preview img {
+    width: 100%; 
+    max-width: 300px;
+    height: auto;
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Odzivnost */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #services-preview div {
+        flex-direction: column;
+    }
+}
+
+/*Animacija za 3 slike kar nudimo*/
+/* Kontejner za vse slike storitev */
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Stilizacija za vsako sliko storitev */
+.service-image {
+    width: 30%; 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 10px;
+    border: 0px solid #ccc; 
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+}
+
+.service-image:hover {
+    transform: scale(1.05);
+    border-color: #0275d8; 
+}
+
+/* Opis pod sliko */
+.service-description {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 52.4%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white; 
+    padding: 10px;
+    text-align: center;
+}
+ 
+.service-image:hover .service-description {
+    display: block;
+}
+
+/*Animacija za banner*/
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; 
+    transition: opacity 1s ease; 
+}
+
+.slide.active {
+    opacity: 1; 
+    position: relative; 
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100; 
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+} 
+
+/* Naslov storitev s hiperpovezavo */
+#services-preview h2 a {
+    color: #0275d8; 
+    font-size: 1.8em; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0); 
+    padding: 10px; 
+}
+
+#services-preview h2 a:hover, #services-preview h2 a:focus {
+    transform: scale(1.05); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+    color: #18BC9C; 
+}
+
+/*za naslov odseka storitve */
+#services-preview h2 {
+    margin-bottom: 20px; 
+}
+
+
+
+
+/*Services CSS*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Specifični stili za storitve stran */
+.services-page #service-intro {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+    margin-bottom: 40px;
+}
+
+.services-page #service-intro h1 {
+    color: #18BC9C;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.services-page #service-intro h1:hover {
+    transform: scale(1.05);
+}
+
+.services-page #service-intro p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Stili za podrobnosti storitev */
+.services-page #service-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.services-page #service-details article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    will-change: opacity, transform;
+}
+
+.services-page #service-details article:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.services-page #service-details article:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.services-page #service-details article:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.services-page .service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.services-page .service-content {
+    text-align: left;
+}
+
+.services-page #service-details h2 {
+    color: #333;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.services-page #service-details p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+/* Dopolnitev za odzivne lastnosti */
+@media (max-width: 768px) {
+    .services-page #service-details {
+        padding: 10px;
+    }
+
+    .services-page #service-details article {
+        padding: 10px;
+    }
+}
+
+/* Keyframes za fade-in in premik navzgor animacijo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+/*about.html*/
+/* Osnovne nastavitve za telo */
+/* Osnovne nastavitve za telo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Slogi za about.html */
+.about-page main {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.about-page main p {
+    text-align: justify; 
+    line-height: 1.8; 
+    margin-bottom: 1.2em; 
+    font-size: 1.2em; 
+}
+
+.about-page main h1, .about-page main h2 {
+    text-align: center; 
+    margin-top: 1em; 
+    margin-bottom: 1em; 
+    padding: 10px; 
+    color: #18BC9C; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    font-size: 2em; 
+}
+
+.about-page .intro-text {
+    font-size: 1.3em; 
+    line-height: 1.8; 
+    margin-bottom: 2em; 
+    color: #333; 
+}
+
+.about-page .team-member {
+    text-align: center; 
+    margin-bottom: 2em; 
+}
+
+.about-page .team-member img {
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 50%; 
+    width: 200px; 
+    height: 200px; 
+    transition: box-shadow 0.3s ease-in-out; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); 
+}
+
+.about-page .team-member img:hover {
+    box-shadow: 
+        0 0 2px white, /* Notranja bela svetloba */
+        0 0 5px #66bb6a, /* Zunanji zelen sij */
+        0 0 15px #66bb6a, /* Večji zelen sij */
+        0 0 20px #66bb6a; /* Največji zelen sij */
+}
+
+.about-page .about-title, .about-page .about-subtitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #18BC9C; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 2em;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-page .about-title:hover, .about-page .about-subtitle:hover {
+    color: #16a085; 
+    transform: scale(1.05); 
+}
+
+/* Keyframes za fade-in animacijo */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.about-page h1, .about-page h2 {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+
+
+
+
+
+/*CSS Stili za contact.html*/
+/* Splošni stili za contact.html */
+.contact-page body, 
+.contact-page h1, 
+.contact-page h2, 
+.contact-page form, 
+.contact-page label, 
+.contact-page input, 
+.contact-page textarea, 
+.contact-page button {
+    font-family: Arial, sans-serif;
+}
+
+.contact-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-page #contact-info {
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-page #contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-page #contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contact-page .contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.contact-page #message-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-page label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-page input[type="text"], 
+.contact-page input[type="email"], 
+.contact-page textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-page button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-page button:hover {
+    background-color: #66bb6a; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.contact-page .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-page .submit-btn:hover {
+    background-color: #66bb6a;
+    transform: scale(1.05);
+}
+
+.contact-page #social-media {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page #social-media h2 {
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-page #social-media h2:hover {
+    transform: scale(1.05); 
+    color: #66bb6a; 
+}
+
+.contact-page .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.contact-page .social-links img {
+    width: 40px;
+    height: auto;
+}
+
+.contact-page .social-links a:hover img {
+    transform: scale(1.1);
+}
+
+.contact-page h1, 
+.contact-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-page h1:hover, 
+.contact-page h2:hover {
+    color: #66bb6a;
+    transform: scale(1.03); 
+}
+
+
+
+ 
+
+/*BLOG html*/
+/* Osnovne nastavitve za telo */
+body, h1, h2, p, a {
+    font-family: Arial, sans-serif;
+}
+
+/* Specifični stili za blog stran */
+.blog-page #blog-header {
+    background: #18BC9C;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.blog-page #blog-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.blog-page #blog-header p {
+    font-size: 1.2em;
+}
+
+.blog-page #blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.blog-post {
+    background: white;
+    width: 45%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: scale(1.02);
+}
+
+.blog-post h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.blog-post p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.blog-post button {
+    display: block;
+    margin: 20px 0;
+}
+
+/* Gumb "Preberi več" */
+.more-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.more-btn:hover, .more-btn:focus {
+    background-color: #66bb6a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.more-btn:active {
+    transform: scale(0.95);
+    background-color: #359a3e;
+}
+
+/* Skriti del vsebine bloga */
+.hidden-content {
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.show-content {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+/* Odzivnost */
+@media (max-width: 768px) {
+    .blog-post {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ocena HTML */
+/* Osnovne nastavitve za telo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Specifični stili za stran Ocene strank */
+.reviews-page #reviews-header {
+    background: #18BC9C;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.reviews-page #reviews-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.reviews-page #reviews-header p {
+    font-size: 1.2em;
+}
+
+.reviews-page #reviews-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.review {
+    background: white;
+    width: 80%;
+    max-width: 800px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.02);
+}
+
+.review h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.review p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.review .more-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.review .more-btn:hover, .review .more-btn:focus {
+    background-color: #66bb6a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.review .more-btn:active {
+    transform: scale(0.95);
+    background-color: #359a3e;
+}
+
+.hidden-content {
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.show-content {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.before-after {
+    width: 45%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+/* Odzivnost */
+@media (max-width: 768px) {
+    .review {
+        width: 90%;
+    }
+    
+    .before-after {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
